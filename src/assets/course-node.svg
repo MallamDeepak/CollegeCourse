@@ -1,0 +1,6 @@
+<svg width="320" height="180" viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="180" rx="24" fill="#F0FDF4"/>
+  <rect x="32" y="24" width="256" height="132" rx="20" fill="white" stroke="#BBF7D0"/>
+  <path d="M160 44L215 76V136L160 168L105 136V76L160 44Z" fill="#22C55E" fill-opacity="0.18" stroke="#16A34A" stroke-width="8"/>
+  <text x="128" y="113" fill="#166534" font-family="Arial, sans-serif" font-size="28" font-weight="700">API</text>
+</svg>

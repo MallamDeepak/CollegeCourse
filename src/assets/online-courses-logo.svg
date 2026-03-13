@@ -1,0 +1,24 @@
+<svg width="520" height="520" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="520" height="520" rx="36" fill="#F8FAFC"/>
+  <path d="M175 108L258 180L218 318L126 276L112 156L175 108Z" fill="url(#paint0_linear)"/>
+  <path d="M345 108L262 180L302 318L394 276L408 156L345 108Z" fill="url(#paint1_linear)"/>
+  <path d="M175 108L236 192L215 224L134 148L175 108Z" fill="#FBBF24"/>
+  <path d="M345 108L284 192L305 224L386 148L345 108Z" fill="#F59E0B"/>
+  <path d="M178 120L255 208L201 216L148 146L178 120Z" fill="#F97316"/>
+  <path d="M342 120L265 208L319 216L372 146L342 120Z" fill="#FB7185"/>
+  <path d="M222 314C222 275.34 253.34 244 292 244C330.66 244 362 275.34 362 314C362 352.66 330.66 384 292 384C253.34 384 222 352.66 222 314Z" fill="#1D4ED8" opacity="0.15"/>
+  <path d="M254 314C254 291.909 271.909 274 294 274C316.091 274 334 291.909 334 314V322H254V314Z" fill="#0EA5E9"/>
+  <path d="M294 266C310.569 266 324 252.569 324 236C324 219.431 310.569 206 294 206C277.431 206 264 219.431 264 236C264 252.569 277.431 266 294 266Z" fill="#F59E0B"/>
+  <text x="260" y="430" text-anchor="middle" fill="#0F172A" font-family="Arial, sans-serif" font-size="54" font-weight="700">Online Courses</text>
+  <text x="260" y="465" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">LEARN ANYWHERE</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="112" y1="108" x2="258" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F43F5E"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="408" y1="108" x2="262" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F97316"/>
+      <stop offset="1" stop-color="#DB2777"/>
+    </linearGradient>
+  </defs>
+</svg>
