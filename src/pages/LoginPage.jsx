@@ -28,39 +28,39 @@ function LoginPage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-6 md:px-6">
-      <div className="mb-4 flex justify-end pr-1">
+    <div className="mx-auto w-full max-w-4xl px-3 py-3 md:px-6 md:py-6">
+      <div className="mb-3 flex justify-end pr-1 md:mb-4">
         <Link to="/" className="text-sm font-bold text-aqua hover:text-cyan-700">
           Back to Home
         </Link>
       </div>
 
       <section className="grid overflow-hidden rounded-3xl border border-cyan-100 bg-white/95 shadow-float md:grid-cols-[1.1fr_1fr]">
-        <div className="border-b border-cyan-100/70 bg-cyan-50/60 p-7 md:border-b-0 md:border-r md:p-8">
+        <div className="order-2 hidden border-t border-cyan-100/70 bg-cyan-50/60 p-4 md:order-1 md:block md:border-t-0 md:border-b-0 md:border-r md:p-8">
         <p className="mb-2 inline-block rounded-full bg-aqua/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-aqua">
           Welcome Back
         </p>
-        <h1 className="font-heading text-3xl font-extrabold">Login to Continue</h1>
+        <h1 className="font-heading text-2xl font-extrabold md:text-3xl">Login to Continue</h1>
         <p className="mt-2 text-sm text-ink/70">Access your dashboard, modules, and progress tracker.</p>
-        <div className="mt-6 space-y-2 text-sm text-ink/70">
+        <div className="mt-4 space-y-2 text-sm text-ink/70 md:mt-6">
           <p className="rounded-xl border border-cyan-100 bg-white px-3 py-2">Developer course path and modules</p>
-          <p className="rounded-xl border border-cyan-100 bg-white px-3 py-2">Resume-friendly project milestones</p>
-          <p className="rounded-xl border border-cyan-100 bg-white px-3 py-2">Learning continuity from any page</p>
+          <p className="hidden rounded-xl border border-cyan-100 bg-white px-3 py-2 sm:block">Resume-friendly project milestones</p>
+          <p className="hidden rounded-xl border border-cyan-100 bg-white px-3 py-2 md:block">Learning continuity from any page</p>
         </div>
-        <p className="mt-6 text-xs font-semibold text-ink/60">
+        <p className="mt-4 text-xs font-semibold text-ink/60 md:mt-6">
           Demo user: developer@collegecourse.com / dev12345
         </p>
       </div>
 
-        <div className="p-7 md:p-8">
-          <Link to="/" className="mb-5 flex items-center justify-center gap-2 font-heading text-2xl font-extrabold tracking-tight text-ink">
+        <div className="order-1 p-4 md:order-2 md:p-8">
+          <Link to="/" className="mb-5 flex items-center justify-center gap-2 font-heading text-xl font-extrabold tracking-tight text-ink md:text-2xl">
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-aqua to-emerald-400 text-sm text-white shadow">
               C
             </span>
             <span>CollegeCourse</span>
           </Link>
 
-          <form className="space-y-4" onSubmit={onSubmit}>
+          <form className="space-y-3.5 md:space-y-4" onSubmit={onSubmit}>
           <label className="block text-sm font-semibold text-ink/80">
             Email
             <input
@@ -96,7 +96,7 @@ function LoginPage() {
             </div>
           </label>
 
-          <button className="w-full rounded-xl bg-aqua px-4 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-cyan-700" type="submit">
+          <button className="w-full rounded-xl bg-aqua px-4 py-2.5 font-bold text-white transition hover:-translate-y-0.5 hover:bg-cyan-700 md:py-3" type="submit">
             Login
           </button>
           </form>

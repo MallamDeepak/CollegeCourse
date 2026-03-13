@@ -39,14 +39,14 @@ function CourseRoadmapModal({ course, moduleIndex, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 py-6 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-2 py-2 backdrop-blur-sm md:px-4 md:py-6"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="relative flex max-h-[90vh] w-full max-w-2xl flex-col rounded-3xl bg-white shadow-2xl">
+      <div className="relative flex max-h-[95vh] w-full max-w-2xl flex-col rounded-2xl bg-white shadow-2xl md:max-h-[90vh] md:rounded-3xl">
         {/* Header */}
-        <div className="relative overflow-hidden rounded-t-3xl border-b border-slate-100">
+        <div className="relative overflow-hidden rounded-t-2xl border-b border-slate-100 md:rounded-t-3xl">
           {/* Banner background */}
-          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 pt-5 pb-16">
+          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-4 pt-4 pb-14 md:px-6 md:pt-5 md:pb-16">
             <div className="flex items-center justify-between">
               <p className="text-xs font-bold uppercase tracking-widest text-amber-400">
                 Module {moduleIndex + 1}
@@ -59,21 +59,21 @@ function CourseRoadmapModal({ course, moduleIndex, onClose }) {
               ✕
             </button>
           </div>
-          <h2 className="mt-2 font-heading text-2xl font-extrabold text-white leading-tight">
+          <h2 className="mt-2 font-heading text-xl font-extrabold leading-tight text-white md:text-2xl">
             {course.title}
           </h2>
           </div>
 
           {/* Logo card overlapping banner */}
-          <div className="flex items-end gap-5 px-6 -mt-10 pb-4">
-            <div className="h-20 w-20 shrink-0 rounded-2xl bg-white shadow-xl ring-4 ring-white flex items-center justify-center overflow-hidden">
+          <div className="-mt-9 flex flex-col items-start gap-3 px-4 pb-4 sm:flex-row sm:items-end sm:gap-5 md:px-6 md:-mt-10">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl ring-4 ring-white md:h-20 md:w-20">
               <img
                 src={course.image}
                 alt={course.title}
                 className="h-full w-full object-contain p-1"
               />
             </div>
-            <div className="pb-1 flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2 pb-1">
               <span className="rounded-full bg-slate-100 border border-slate-200 px-2.5 py-0.5 text-xs font-semibold text-slate-700">
                 {course.level}
               </span>
@@ -93,23 +93,23 @@ function CourseRoadmapModal({ course, moduleIndex, onClose }) {
         </div>
 
         {/* Scrollable body */}
-        <div className="overflow-y-auto px-6 py-5 space-y-6">
+        <div className="space-y-6 overflow-y-auto px-4 py-4 md:px-6 md:py-5">
           {/* Description */}
           <p className="text-sm text-ink/75">{course.description}</p>
 
           {/* Roadmap timeline */}
           <div>
             <h3 className="mb-4 font-heading text-base font-bold text-ink">Full Learning Roadmap</h3>
-            <div className="relative space-y-4 pl-6">
+            <div className="relative space-y-4 pl-4 md:pl-6">
               {/* Vertical line */}
-              <div className="absolute left-2 top-2 bottom-2 w-0.5 bg-slate-200 rounded-full" />
+              <div className="absolute bottom-2 left-1 top-2 w-0.5 rounded-full bg-slate-200 md:left-2" />
 
               {course.roadmap.map((phase, i) => {
                 const color = phaseColors[i % phaseColors.length];
                 return (
                   <div key={phase.phase} className="relative">
                     {/* Dot */}
-                    <div className={`absolute -left-[18px] top-3 h-3 w-3 rounded-full border-2 border-white ${color.dot} shadow`} />
+                    <div className={`absolute -left-[14px] top-3 h-3 w-3 rounded-full border-2 border-white ${color.dot} shadow md:-left-[18px]`} />
 
                     <div className={`rounded-2xl border ${color.border} ${color.bg} p-4`}>
                       <div className="mb-3 flex items-center gap-2">
@@ -153,7 +153,7 @@ function CourseRoadmapModal({ course, moduleIndex, onClose }) {
           {/* What you get card */}
           <div className="rounded-2xl bg-gradient-to-br from-cyan-50 to-amber-50 border border-cyan-100 p-4">
             <h3 className="mb-3 font-heading text-sm font-bold text-ink">What's included</h3>
-            <ul className="grid grid-cols-2 gap-2">
+            <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {[
                 { icon: "📹", text: "Video lessons" },
                 { icon: "📝", text: "Hands-on projects" },
@@ -171,7 +171,7 @@ function CourseRoadmapModal({ course, moduleIndex, onClose }) {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-slate-100 px-6 py-4">
+        <div className="border-t border-slate-100 px-4 py-4 md:px-6">
           {enrolled ? (
             <div className="flex flex-col gap-3 sm:flex-row">
               <div className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-50 border border-emerald-200 py-2.5 text-sm font-bold text-emerald-700">

@@ -32,36 +32,36 @@ function RegisterPage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-6 md:px-6">
-      <div className="mb-4 flex justify-end pr-1">
+    <div className="mx-auto w-full max-w-4xl px-3 py-3 md:px-6 md:py-6">
+      <div className="mb-3 flex justify-end pr-1 md:mb-4">
         <Link to="/" className="text-sm font-bold text-aqua hover:text-cyan-700">
           Back to Home
         </Link>
       </div>
 
       <section className="grid overflow-hidden rounded-3xl border border-cyan-100 bg-white/95 shadow-float md:grid-cols-[1.1fr_1fr]">
-        <div className="border-b border-amber-100/70 bg-amber-50/60 p-7 md:border-b-0 md:border-r md:p-8">
+        <div className="order-2 hidden border-t border-amber-100/70 bg-amber-50/60 p-4 md:order-1 md:block md:border-t-0 md:border-b-0 md:border-r md:p-8">
         <p className="mb-2 inline-block rounded-full bg-ember/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-ember">
           Join CollegeCourse
         </p>
-        <h1 className="font-heading text-3xl font-extrabold">Create Your Account</h1>
+        <h1 className="font-heading text-2xl font-extrabold md:text-3xl">Create Your Account</h1>
         <p className="mt-2 text-sm text-ink/70">Start your developer course journey in less than a minute.</p>
-        <div className="mt-6 space-y-2 text-sm text-ink/70">
+        <div className="mt-4 space-y-2 text-sm text-ink/70 md:mt-6">
           <p className="rounded-xl border border-amber-100 bg-white px-3 py-2">One-click access to dashboard after login</p>
-          <p className="rounded-xl border border-amber-100 bg-white px-3 py-2">Clear roadmap from basics to deployment</p>
-          <p className="rounded-xl border border-amber-100 bg-white px-3 py-2">Beginner-friendly learning structure</p>
+          <p className="hidden rounded-xl border border-amber-100 bg-white px-3 py-2 sm:block">Clear roadmap from basics to deployment</p>
+          <p className="hidden rounded-xl border border-amber-100 bg-white px-3 py-2 md:block">Beginner-friendly learning structure</p>
         </div>
       </div>
 
-        <div className="p-7 md:p-8">
-          <Link to="/" className="mb-5 flex items-center justify-center gap-2 font-heading text-2xl font-extrabold tracking-tight text-ink">
+        <div className="order-1 p-4 md:order-2 md:p-8">
+          <Link to="/" className="mb-5 flex items-center justify-center gap-2 font-heading text-xl font-extrabold tracking-tight text-ink md:text-2xl">
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-aqua to-emerald-400 text-sm text-white shadow">
               C
             </span>
             <span>CollegeCourse</span>
           </Link>
 
-          <form className="space-y-4" onSubmit={onSubmit}>
+          <form className="space-y-3.5 md:space-y-4" onSubmit={onSubmit}>
           <label className="block text-sm font-semibold text-ink/80">
             Full Name
             <input
@@ -111,7 +111,7 @@ function RegisterPage() {
             </div>
           </label>
 
-          <button className="w-full rounded-xl bg-ember px-4 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-orange-600" type="submit">
+          <button className="w-full rounded-xl bg-ember px-4 py-2.5 font-bold text-white transition hover:-translate-y-0.5 hover:bg-orange-600 md:py-3" type="submit">
             Create Account
           </button>
           </form>

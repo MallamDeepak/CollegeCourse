@@ -96,7 +96,7 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
+          <div className="hidden justify-center lg:justify-end md:flex">
             <img
               src={heroIllustration}
               alt="Online courses brand visual"
@@ -137,7 +137,7 @@ function HomePage() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {developerCourses.slice(0, 4).map((course) => (
             <article key={course.title} className="rounded-xl border border-slate-200 bg-gradient-to-b from-slate-50 to-white p-5 transition hover:-translate-y-1 hover:shadow-md">
-              <img src={course.image} alt={course.title} className="mb-4 h-28 w-full rounded-2xl object-cover" />
+              <img src={course.image} alt={course.title} className="mb-4 h-28 w-full rounded-2xl bg-slate-50 p-2 object-contain object-center" />
               <h3 className="font-heading text-lg font-bold">{course.title}</h3>
               <p className="mt-3 text-sm text-ink/70">{course.description}</p>
             </article>

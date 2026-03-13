@@ -72,7 +72,7 @@ function DashboardPage() {
                     <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-700">✓ Enrolled</span>
                   )}
                 </div>
-                <img src={course.image} alt={course.title} className="mt-3 h-32 w-full rounded-2xl object-cover" />
+                <img src={course.image} alt={course.title} className="mt-3 h-32 w-full rounded-2xl bg-slate-50 p-2 object-contain object-center" />
                 <h3 className="font-heading text-xl font-bold text-ink">{course.title}</h3>
                 <p className="mt-2 text-sm text-ink/75">{course.description}</p>
                 <p className={`mt-3 text-xs font-semibold ${isEnrolled ? "text-emerald-600" : "text-aqua"}`}>

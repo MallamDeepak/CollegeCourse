@@ -16,6 +16,7 @@ function Layout({ children }) {
   const navigate = useNavigate();
   const [activeHash, setActiveHash] = useState("");
   const [routeLoading, setRouteLoading] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const previousPathRef = useRef(location.pathname);
   const loadingTimeoutRef = useRef(null);
   const currentUser = getCurrentUser();
@@ -59,6 +60,10 @@ function Layout({ children }) {
       setActiveHash("");
     }
   }, [location.pathname]);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     if (!location.hash) {
@@ -164,15 +169,15 @@ function Layout({ children }) {
       )}
       {!hideChrome && (
         <header className="sticky top-0 z-20 border-b border-cyan-100/70 bg-white/85 backdrop-blur-xl">
-          <div className="mx-auto flex w-[min(1140px,92%)] items-center justify-between py-4">
+          <div className="mx-auto flex w-[min(1140px,92%)] items-center justify-between py-3 md:py-4">
             <Link to="/" className="group flex items-center gap-2 font-heading text-xl font-extrabold tracking-tight text-ink md:text-2xl">
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-aqua to-emerald-400 text-sm text-white shadow">
                 C
               </span>
               <span className="transition group-hover:text-aqua">CollegeCourse</span>
             </Link>
-            <div className="flex items-center gap-3">
-              <nav className="flex flex-wrap items-center gap-1.5 text-xs font-bold uppercase tracking-wider md:text-sm">
+            <div className="flex items-center gap-2 md:gap-3">
+              <nav className="hidden flex-wrap items-center gap-1.5 text-xs font-bold uppercase tracking-wider md:flex md:text-sm">
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
@@ -198,7 +203,7 @@ function Layout({ children }) {
               </nav>
 
               {currentUser && (
-                <div className="flex items-center gap-2 rounded-full border border-cyan-100 bg-white px-2.5 py-1.5">
+                <div className="hidden items-center gap-2 rounded-full border border-cyan-100 bg-white px-2.5 py-1.5 md:flex">
                   <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-aqua text-xs font-bold text-white">
                     {currentUser.name?.charAt(0)?.toUpperCase() || "U"}
                   </span>
@@ -207,14 +212,62 @@ function Layout({ children }) {
                   </p>
                 </div>
               )}
+
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-100 bg-white text-ink md:hidden"
+                aria-label="Toggle menu"
+                aria-expanded={mobileMenuOpen}
+              >
+                {mobileMenuOpen ? "x" : "="}
+              </button>
             </div>
           </div>
+
+          {mobileMenuOpen && (
+            <div className="mx-auto w-[min(1140px,92%)] border-t border-cyan-100/80 py-3 md:hidden">
+              <nav className="flex flex-col gap-1 text-xs font-bold uppercase tracking-wider">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`rounded-lg px-3 py-2.5 transition ${
+                      isItemActive(item.to)
+                        ? "bg-ember text-white"
+                        : "text-ink/70 hover:bg-cyan-50 hover:text-aqua"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                {currentUser && (
+                  <>
+                    <div className="mt-1 flex items-center gap-2 rounded-lg border border-cyan-100 bg-white px-3 py-2">
+                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-aqua text-xs font-bold text-white">
+                        {currentUser.name?.charAt(0)?.toUpperCase() || "U"}
+                      </span>
+                      <p className="truncate text-xs font-semibold text-ink/80">{currentUser.name}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleLogout}
+                      className="rounded-lg px-3 py-2.5 text-left text-ink/70 transition hover:bg-cyan-50 hover:text-aqua"
+                    >
+                      Logout
+                    </button>
+                  </>
+                )}
+              </nav>
+            </div>
+          )}
         </header>
       )}
 
       <main
         className={`mx-auto w-[min(1140px,92%)] ${
-          hideChrome ? "flex min-h-screen items-center justify-center py-6" : "py-10 md:py-12"
+          hideChrome ? "flex min-h-screen items-center justify-center py-4 md:py-6" : "py-7 md:py-12"
         }`}
       >
         {children}
